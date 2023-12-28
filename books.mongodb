@@ -14,9 +14,31 @@ db.Books.find({author:"Shyam"}).count();
 db.Books.find().count();
 
 //find avg cost of books in library
-db.Books.find({price:{$avg:}})
+//Id is required for group specification
+db.Books.aggregate(
+    [
+        {
+            $group:
+            {
+                "_id":"_id",
+                AverageBooksCost: {$avg: "$price"}
+            }
+        }
+    ]
+)
 
 //find total number of pages of books authored by Shyam
+db.Books.aggregate(
+    [
+        {
+            $group:
+            {
+                _id:"_id",
+                SumOfBooksPages: {$sum: "$pages"}
+            }
+        }
+    ]
+)
 
 //Sort the books by descending order of pages
 
@@ -24,4 +46,7 @@ db.Books.find({price:{$avg:}})
 db.Books.update({name:"MongoDB"},{$set:{ref_no:1014}})
 
 //find total books where cost is above 400
+db.Books.find({price:{$gt:400}});
+
 //delete the co-author of book 'mysql'
+db.Books.delete({name:"MySql"})
