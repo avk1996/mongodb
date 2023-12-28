@@ -41,9 +41,10 @@ db.Books.aggregate(
 )
 
 //Sort the books by descending order of pages
+//1 for ascending order -1 for decending order
 db.Books.aggregate(
     [
-        {$sort:{pages:1}}
+        {$sort:{pages:-1}}
     ]
 )
 //change the id of book 'MongoDB' to 1014
