@@ -1,0 +1,19 @@
+use ActsDB
+
+db.Cricketers.insertMany([{name:"Ajay",matches:58,total_runs:3567,wickets:23,catches:32,stumping:23},{name:"Vijay",matches:32,total_runs:4057,catches:11},{name:"Ram",matches:230,total_runs:6390,wickets:13,catches:111,stumping:11},{name:"Ahmed",matches:101,total_runs:669,wickets:89,catches:71},{name:"Prem",matches:57,total_runs:1044,wickets:55,catches:69},{}])
+db.Cricketers.insertOne({name:"Sangan",matches:58,total_runs:8267,catches:52,stumping:26})
+
+//find the information of all bowlers
+db.Cricketers.find({wickets: {$exists:true}});
+
+//print the information about the wicketkeepers only
+db.Cricketers.find({stumping: {$exists:true}});
+
+//delete the wickets for the player who has stumping
+db.Cricketers.deleteMany({stumping: {$exists:true}});
+
+//update the matchies and wickets of player 'Vijay' to  61 and 71
+db.Cricketers.update({matches:32,catches:11},{$set:{matches:61,catches:71}});
+
+//print the information of players who have taken more than 100 catches
+db.Cricketers.find({catches:{$gt:100}});

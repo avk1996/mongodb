@@ -1,0 +1,37 @@
+db.Employees.insertMany([
+  {
+    _id: 101,
+    name: "Akhil",
+    Address: "Pune",
+    Location: "Acts",
+    salary: 2000000,
+  },
+  {
+    _id: 102,
+    name: "Rakhi",
+    Address: "Dhule",
+    Location: "Ram Nagar",
+    salary: 5000000,
+  },
+  {
+    _id: 103,
+    name: "Ramaswamy",
+    Address: "Nanded",
+    salary: 1000000,
+  },
+  {
+    _id: 104,
+    name: "Raksha",
+    Address: "Solpaur",
+    salary: 4000000,
+  },
+  {
+    _id: 1,
+    name: "Mark Venky",
+    designation: "CEO",
+  },
+]);
+
+db.Employees.find({ salary: 1000000 });
+db.Employees.updateOne({ salary: 1000000 }, { $set: { salary: 6000000 } });
+db.Employees.find({ _id: 103 });

@@ -1,0 +1,7 @@
+use ActsDB
+
+db.Books.insertOne({name: 'Yash',price: 454.34});
+db.Books.insertOne({_id:1001,name:"Python",author:"Shyam",co_author:"Rakesh",pages:350,price:450});
+
+db.Books.insertMany([{_id:1002,name:"Java",author:"Amita",pages:300,price:500},{_id:1003,name:"Html",author:"Amita",co_author:"Shyam",pages:225,price:300},{_id:1004,name:"MongoDB",author:"Swapnil",pages:440,price:550},{_id:1005,name:"MySql",author:"Shrikant",coauthor:"Nitin",pages:330,price:630}]);
+
