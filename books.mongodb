@@ -5,3 +5,12 @@ db.Books.insertOne({_id:1001,name:"Python",author:"Shyam",co_author:"Rakesh",pag
 
 db.Books.insertMany([{_id:1002,name:"Java",author:"Amita",pages:300,price:500},{_id:1003,name:"Html",author:"Amita",co_author:"Shyam",pages:225,price:300},{_id:1004,name:"MongoDB",author:"Swapnil",pages:440,price:550},{_id:1005,name:"MySql",author:"Shrikant",coauthor:"Nitin",pages:330,price:630}]);
 
+//Count how many books wrote by Amrita
+//Count total books written by Shyam
+//How many authors books are available in library
+//find avg cost of books in library
+//find total number of pages of books authored by Shyam
+//Sort the books by descending order of pages
+//change the id of book 'MongoDB' to 1014
+//find total books where cost is above 400
+//delete the co-author of book 'mysql'
