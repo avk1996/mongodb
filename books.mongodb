@@ -1,16 +1,27 @@
 use ActsDB
 
-db.Books.insertOne({name: 'Yash',price: 454.34});
-db.Books.insertOne({_id:1001,name:"Python",author:"Shyam",co_author:"Rakesh",pages:350,price:450});
+db.Books.insertOne({ref_no:1001,name:"Python",author:"Shyam",co_author:"Rakesh",pages:350,price:450});
 
-db.Books.insertMany([{_id:1002,name:"Java",author:"Amita",pages:300,price:500},{_id:1003,name:"Html",author:"Amita",co_author:"Shyam",pages:225,price:300},{_id:1004,name:"MongoDB",author:"Swapnil",pages:440,price:550},{_id:1005,name:"MySql",author:"Shrikant",coauthor:"Nitin",pages:330,price:630}]);
+db.Books.insertMany([{ref_no:1002,name:"Java",author:"Amrita",pages:300,price:500},{ref_no:1003,name:"Html",author:"Amita",co_author:"Shyam",pages:225,price:300},{ref_no:1004,name:"MongoDB",author:"Swapnil",pages:440,price:550},{ref_no:1005,name:"MySql",author:"Shrikant",coauthor:"Nitin",pages:330,price:630}]);
 
-//Count how many books wrote by Amrita
+//Count how many books wrote by Amita
+db.Books.find({author:"Amita"}).count();
+
 //Count total books written by Shyam
+db.Books.find({author:"Shyam"}).count();
+
 //How many authors books are available in library
+db.Books.find().count();
+
 //find avg cost of books in library
+db.Books.find({price:{$avg:}})
+
 //find total number of pages of books authored by Shyam
+
 //Sort the books by descending order of pages
+
 //change the id of book 'MongoDB' to 1014
+db.Books.update({name:"MongoDB"},{$set:{ref_no:1014}})
+
 //find total books where cost is above 400
 //delete the co-author of book 'mysql'
