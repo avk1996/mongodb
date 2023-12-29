@@ -55,3 +55,6 @@ db.Books.find({price:{$gt:400}});
 
 //delete the co-author of book 'mysql'
 db.Books.delete({name:"MySql"});
+
+//find all documents
+db.Books.find();
